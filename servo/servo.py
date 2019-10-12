@@ -4,7 +4,7 @@ import time
 GPIO.setmode(GPIO.BCM)
 
 #GPIO4を制御パルスの出力に設定
-gp_out = 4
+gp_out = 14
 GPIO.setup(gp_out, GPIO.OUT)
 
 #「GPIO4出力」でPWMインスタンスを作成する。
