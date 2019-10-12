@@ -20,7 +20,7 @@ for i in range(1):
     time.sleep(0.5)
 
     servo.ChangeDutyCycle(7.25)
-        time.sleep(0.5)
+    time.sleep(0.5)
 
 
 servo.stop()
