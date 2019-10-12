@@ -17,13 +17,13 @@ servo = GPIO.PWM(gp_out, 50)
 servo.start(0)
 #time.sleep(1)
 
-for i in range(1):
+for i in range(1    ):
     #デューティサイクルの値を変更することでサーボが回って角度が変わる。
     servo.ChangeDutyCycle(2.5)
     time.sleep(0.5)
 
-    # servo.ChangeDutyCycle(7.25)
-    # time.sleep(0.5)
+    servo.ChangeDutyCycle(7.25)
+    time.sleep(0.5)
 
     # servo.ChangeDutyCycle(12)
     # time.sleep(0.5)
