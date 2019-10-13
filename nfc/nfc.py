@@ -1,24 +1,14 @@
 import nfc
 import binascii
 
-suica=nfc.clf.RemoteTarget("212F")
-suica.sensf_req=bytearray.fromhex("0000030000")
+#カードを読み取り
+def connected(tag):
+    global idm
+    idm = binascii.hexlify(tag.idm)
 
+clf = nfc.ContactlessFrontend('usb')
+clf.connect(rdwr={'on-connect': connected}) # now touch a tag
+clf.close()
 
-while True:
-
-    with nfc.ContactlessFrontend("usb") as clf:
-
-        target=clf.sense(suica,iterations=3,interval=1.0)
-
-        while target:
-
-            tag=nfc.tag.activate(clf,target)
-
-            tag.sys=3
-
-            idm=binascii.hexlify(tag.idm)
-
-            print(idm.decode())
-
-            break
+#IDmを表示
+print idm
