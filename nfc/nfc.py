@@ -11,4 +11,4 @@ clf.connect(rdwr={'on-connect': connected}) # now touch a tag
 clf.close()
 
 #IDmを表示
-print idm
+print (idm)
